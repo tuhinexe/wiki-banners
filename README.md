@@ -11,7 +11,7 @@ The application provides an intuitive interface to:
 - Create banners with custom text
 - Choose background colors
 - Upload and integrate custom images
-- Customize text colors and positioning
+- Customize text colors
 
 ## Technology Stack
 
@@ -34,7 +34,6 @@ This project is built with:
 
 - `src/components/Banner.tsx`: The main banner display component
 - `src/components/EditBannerForm.tsx`: Form component for customizing banner properties
-- `src/components/Sidebar.tsx`: Navigation sidebar component
 - `src/__test__/`: Contains test files for all components
 
 ## Getting Started
