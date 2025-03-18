@@ -1,34 +1,37 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Banner from "./components/Banner";
+import EditBannerForm from "./components/EditBannerForm";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [bannerText, setBannerText] = useState("I love Open Source");
+  const [backgroundColor, setBackgroundColor] = useState("#3b82f6");
+  const [imageUrl, setImageUrl] = useState("");
+  const [textColor, setTextColor] = useState("#ffffff");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="h-screen w-full flex">
+      <div className="w-full flex">
+        <div className="flex-1 flex items-center justify-center">
+          <Banner
+            backgroundColor={backgroundColor}
+            text={bannerText}
+            imageUrl={imageUrl}
+            textColor={textColor}
+          />
+        </div>
+        <EditBannerForm
+          textColor={textColor}
+          text={bannerText}
+          imageUrl={imageUrl}
+          backgroundColor={backgroundColor}
+          onBackgroundColorChange={setBackgroundColor}
+          onTextChange={setBannerText}
+          onImageUrlChange={setImageUrl}
+          onTextColorChange={setTextColor}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   );
 }
 
